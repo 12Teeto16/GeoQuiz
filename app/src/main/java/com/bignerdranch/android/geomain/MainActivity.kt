@@ -3,6 +3,7 @@ package com.bignerdranch.android.geomain
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var trueButton: Button
     private lateinit var falseButton: Button
-    private lateinit var nextButton: Button
+    private lateinit var nextButton: ImageButton
     private lateinit var questionTextView: TextView
     private val questionBank = listOf(
         Question(R.string.question_australia, true),
