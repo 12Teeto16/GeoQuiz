@@ -37,19 +37,26 @@ class MainActivity : AppCompatActivity() {
 
         trueButton.setOnClickListener { view: View ->
             checkAnswer(true)
+            trueButton.visibility = View.INVISIBLE
+            falseButton.visibility = View.INVISIBLE
         }
         falseButton.setOnClickListener { view: View ->
             checkAnswer(false)
+            trueButton.visibility = View.GONE
+            falseButton.visibility = View.GONE
         }
         nextButton.setOnClickListener {
             currentIndex = (currentIndex + 1) %
                     questionBank.size
+            trueButton.visibility = View.VISIBLE
+            falseButton.visibility = View.VISIBLE
             updateQuestion()
 
         }
         updateQuestion()
 
     }
+
     override fun onStart() {
         super.onStart()
         Log.d(TAG,
@@ -94,4 +101,5 @@ class MainActivity : AppCompatActivity() {
             Toast.LENGTH_SHORT)
             .show()
     }
+
 }
