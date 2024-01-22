@@ -39,17 +39,26 @@ class MainActivity : AppCompatActivity() {
             checkAnswer(true)
             trueButton.visibility = View.INVISIBLE
             falseButton.visibility = View.INVISIBLE
+            if (currentIndex==5){
+                nextButton.isEnabled = false
+                nextButton.visibility = View.INVISIBLE
+            }
         }
         falseButton.setOnClickListener { view: View ->
             checkAnswer(false)
             trueButton.visibility = View.GONE
             falseButton.visibility = View.GONE
+            if (currentIndex==5){
+                nextButton.isEnabled = false
+                nextButton.visibility = View.INVISIBLE
+            }
         }
         nextButton.setOnClickListener {
             currentIndex = (currentIndex + 1) %
                     questionBank.size
             trueButton.visibility = View.VISIBLE
             falseButton.visibility = View.VISIBLE
+
             updateQuestion()
 
         }
