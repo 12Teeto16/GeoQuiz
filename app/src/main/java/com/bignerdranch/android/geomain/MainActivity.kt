@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
+
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var falseButton: Button
     private lateinit var nextButton: Button
     private lateinit var questionTextView: TextView
+
     private val questionBank = listOf(
         Question(R.string.question_australia, true),
         Question(R.string.question_oceans, true),
@@ -35,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         nextButton = findViewById(R.id.next_button)
         questionTextView = findViewById(R.id.question_text_view)
 
+
         trueButton.setOnClickListener { view: View ->
             checkAnswer(true)
             trueButton.visibility = View.INVISIBLE
@@ -51,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             if (currentIndex==5){
                 nextButton.isEnabled = false
                 nextButton.visibility = View.INVISIBLE
+
             }
         }
         nextButton.setOnClickListener {
@@ -58,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                     questionBank.size
             trueButton.visibility = View.VISIBLE
             falseButton.visibility = View.VISIBLE
+
 
             updateQuestion()
 
@@ -103,6 +108,7 @@ class MainActivity : AppCompatActivity() {
         val messageResId = if (userAnswer ==
             correctAnswer) {
             R.string.correct_toast
+
         } else {
             R.string.incorrect_toast
         }
